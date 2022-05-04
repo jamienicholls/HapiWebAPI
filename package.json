@@ -1,0 +1,22 @@
+{
+  "name": "hapiwebapi",
+  "version": "1.0.0",
+  "description": "Web API Example using Hapi and React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd client && npm install && cd ../server && npm install",
+    "start": "cd server && npm start",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamienicholls/HapiWebAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamienicholls/HapiWebAPI/issues"
+  },
+  "homepage": "https://github.com/jamienicholls/HapiWebAPI#readme"
+}
