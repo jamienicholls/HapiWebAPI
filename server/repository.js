@@ -2,7 +2,7 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database(':memory:');
 
-// DB Helper Functions to return promises
+// DB Helper functions to return promises (wrapped around the db.run, db.all and db.get functions)
 const run = (sql, params = []) => {
   return new Promise((resolve, reject) => {
     db.run(sql, params, function (err) {
@@ -47,15 +47,19 @@ const get = (sql, params = []) => {
 
 // Initialise database
 const init = async () => {
+  // Create tables
   await run(`create table users (
         user_id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         created_date DATE DEFAULT CURRENT_TIMESTAMP
     );`);
-    await run(`INSERT INTO users (name)
-      VALUES ('Jamie'), ('Ella')`);
+  
+  // Insert data
+  await run(`INSERT INTO users (name)
+    VALUES ('Jamie'), ('Ella')`);
 };
 
+// Repository functions
 const getUsers = async () => {
   const result = await all(`
     SELECT name

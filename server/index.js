@@ -4,11 +4,9 @@ const repository = require('./repository');
 const config = require('./config');
 const Inert = require('@hapi/inert');
 
-
 const routes = [];
 const plugins = [];
 plugins.push(Inert);
-routes.push(...apiRoutes);
 
 // Static routes (client static files)
 const staticHandler = {
@@ -25,8 +23,11 @@ const staticRoute = {
 };
 routes.push(staticRoute);
 
+// Add API Routes
+routes.push(...apiRoutes);
 
 const init = async () => {
+  // Initalise database (see repository file)
   repository.init();
 
   const server = Hapi.server({
