@@ -1,5 +1,5 @@
 # HapiWebAPI
-Web API Example using Hapi and React
+Web API Example template using Hapi for the http server and react for the client. This also uses sqlite3 for an in memory application database. 
 
 ## Running
 ```
