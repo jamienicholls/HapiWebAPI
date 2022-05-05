@@ -1,7 +1,6 @@
 const Hapi = require('@hapi/hapi');
 const apiRoutes = require('./apiRoutes');
 const repository = require('./repository');
-const config = require('./config');
 const Inert = require('@hapi/inert');
 
 const routes = [];
@@ -38,6 +37,7 @@ const init = async () => {
         },
       },
     },
+    port: 8080,
   });
   await server.register(plugins);
   server.route(routes);
