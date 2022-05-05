@@ -8,8 +8,8 @@ class Users extends React.Component  {
     }
   };
   componentDidMount() {
-    fetch('/users').then((Response) => Response.json()).
-      then((users) => {
+    fetch('/users').then((Response) => Response.json())
+      .then((users) => {
         console.log(users)
         this.setState({
           data: users
