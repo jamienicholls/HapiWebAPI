@@ -38,8 +38,6 @@ const init = async () => {
         },
       },
     },
-    port: 8080,
-    host: config.host,
   });
   await server.register(plugins);
   server.route(routes);
