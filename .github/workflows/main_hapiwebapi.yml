@@ -48,9 +48,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
-
-      - name: unzip artifact for deployment
-        run: unzip release.zip
   
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -59,4 +56,4 @@ jobs:
           app-name: 'hapiwebapi'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A6F2DF1FD129422DAC838ED9693229DB }}
-          package: .
+          package: ./release.zip
