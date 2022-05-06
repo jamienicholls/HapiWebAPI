@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
+    "test:ci": "jest --coverage",
     "start": "node index.js"
   },
   "author": "",
@@ -13,5 +14,8 @@
     "@hapi/hapi": "^20.2.2",
     "@hapi/inert": "^6.0.5",
     "sqlite3": "^5.0.6"
+  },
+  "devDependencies": {
+    "jest": "^28.0.3"
   }
 }
